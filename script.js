@@ -16,7 +16,7 @@ let i = 0;
 while (i<listaSpesa.length) {
 
     console.log(listaSpesa[i]);
-    document.getElementById("unorderedListSpesa").innerHTML += "<li>" + listaSpesa[i] + "</li>";
+    document.getElementById("unorderedListSpesa").innerHTML += "<li>" + listaSpesa[i] + "<button type='button' class='btn btn-light'>Elimina</button></li>";
     i++;
 
 };
@@ -29,7 +29,7 @@ buttonNuovoElemento.addEventListener('click', function() {
     let nuovoElemento = document.getElementById("nuovoElemento").value;
     listaSpesa.push(nuovoElemento);
     console.log(nuovoElemento);
-    document.getElementById("unorderedListSpesa").innerHTML += "<li>" + nuovoElemento + "</li>";
+    document.getElementById("unorderedListSpesa").innerHTML += "<li>" + nuovoElemento + "<button type='button' class='btn btn-light'>Elimina</button></li>";
 });
 
 /* document.getElementById("nuovoElemento").innerHTML = listaSpesa.push */
