@@ -21,3 +21,16 @@ while (i<listaSpesa.length) {
 
 };
 
+// Input nuovi elementi
+
+let buttonNuovoElemento = document.getElementById("buttonNuovoElemento");
+buttonNuovoElemento.addEventListener('click', function() {
+
+    let nuovoElemento = document.getElementById("nuovoElemento").value;
+    listaSpesa.push(nuovoElemento);
+    console.log(nuovoElemento);
+    document.getElementById("unorderedListSpesa").innerHTML += "<li>" + nuovoElemento + "</li>";
+});
+
+/* document.getElementById("nuovoElemento").innerHTML = listaSpesa.push */
+
