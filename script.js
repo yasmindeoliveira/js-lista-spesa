@@ -16,6 +16,8 @@ let i = 0;
 while (i<listaSpesa.length) {
 
     console.log(listaSpesa[i]);
+    document.getElementById("unorderedListSpesa").innerHTML += "<li>" + listaSpesa[i] + "</li>";
     i++;
 
 };
+
