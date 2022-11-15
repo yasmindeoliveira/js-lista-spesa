@@ -13,24 +13,53 @@ let listaSpesa = ["Latte", "Farina", "Zucchero", "Uova", "Vaniglia", "Limone", "
 
 let i = 0;
 
-while (i<listaSpesa.length) {
+while (i < listaSpesa.length) {
 
     console.log(listaSpesa[i]);
-    document.getElementById("unorderedListSpesa").innerHTML += "<li>" + listaSpesa[i] + "<button type='button' class='btn btn-light'>Elimina</button></li>";
+    document.getElementById("unorderedListSpesa").innerHTML += '<li id="eliminaButton' + i + '">' + listaSpesa[i] + '<button id="botono' + (i) + '" type="button" class="btn btn-light">Elimina</button></li>';
     i++;
+
+};
+
+// Aggiunta funzione di rimozione
+
+for (let i = 0; i < listaSpesa.length; i++) {
+
+    let botonoEliminatore = document.getElementById("botono" + i);
+
+    botonoEliminatore.addEventListener('click', function () {
+        document.getElementById("eliminaButton" + i).remove();
+    });
 
 };
 
 // Input nuovi elementi
 
 let buttonNuovoElemento = document.getElementById("buttonNuovoElemento");
-buttonNuovoElemento.addEventListener('click', function() {
+buttonNuovoElemento.addEventListener('click', function () {
 
     let nuovoElemento = document.getElementById("nuovoElemento").value;
     listaSpesa.push(nuovoElemento);
     console.log(nuovoElemento);
-    document.getElementById("unorderedListSpesa").innerHTML += "<li>" + nuovoElemento + "<button type='button' class='btn btn-light'>Elimina</button></li>";
+    document.getElementById("unorderedListSpesa").innerHTML += '<li id="eliminaButton' + (listaSpesa.length - 1) + '">' + nuovoElemento + '<button id="botono' + (listaSpesa.length - 1) + '" type="button" class="btn btn-light">Elimina</button></li>';
+
+    for (let i = 0; i < listaSpesa.length; i++) {
+
+        let botonoEliminatore = document.getElementById("botono" + i);
+
+        if (botonoEliminatore) {
+
+            botonoEliminatore.addEventListener('click', function () {
+                document.getElementById("eliminaButton" + i).remove();
+            });
+        };
+    };
+
+
+
 });
+
+
 
 /* document.getElementById("nuovoElemento").innerHTML = listaSpesa.push */
 
