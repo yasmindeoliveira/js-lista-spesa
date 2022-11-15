@@ -4,6 +4,18 @@ let listaSpesa = ["Latte", "Farina", "Zucchero", "Uova", "Vaniglia", "Limone", "
 
 // Stampa in console elementi della lista individualmente ciclo: for
 
-for (let i = 0; i<listaSpesa.length; i++){
+/* for (let i = 0; i<listaSpesa.length; i++){
+
     console.log(listaSpesa[i]);
-}
+} */
+
+// Stampa in console elementi della lista individualmente ciclo: while
+
+let i = 0;
+
+while (i<listaSpesa.length) {
+
+    console.log(listaSpesa[i]);
+    i++;
+
+};
